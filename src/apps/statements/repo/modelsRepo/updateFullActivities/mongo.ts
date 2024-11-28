@@ -71,7 +71,7 @@ const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullAc
     .find(mongoQuery)
     .upsert()
     .updateOne({
-      ...(!isEmpty(mongoSet) ? { $set: mongoSet } : {}),
+      ...(!isEmpty(mongoSet) ? { $set: mongoSet } : { $set: {} }),
       // ...(!isEmpty(mongoAddToSet) ? { $addToSet: mongoAddToSet } : {}),
     });
 };
