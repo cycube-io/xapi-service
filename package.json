@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "start": "node dist/server.js",
-    "start:dev": "nodemon",
-    "build": "tsc",
+    "start:dev": "npx nodemon",
+    "build": "npx tsc",
     "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 20000 --exit --bail",
     "test-local": "STORAGE_REPO=local nyc npm run test",
     "test-s3": "STORAGE_REPO=s3 npm run test",
@@ -116,7 +116,7 @@
     "supertest": "6.2.3",
     "ts-node": "9.1.1",
     "tsconfig-paths": "3.9.0",
-    "typescript": "4.3.3"
+    "typescript": "^4.3.3"
   },
   "resolutions": {
     "normalize-url": "^6.0.1",
