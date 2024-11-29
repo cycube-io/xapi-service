@@ -10,7 +10,7 @@ import validateRegistration from './utils/validateRegistration';
 
 export default (config: Config) => {
   return async (opts: OverwriteStateOptions) => {
-    checkStateWriteScopes(opts.client.scopes);
+    checkStateWriteScopes(opts.client.scopes, opts.agent, opts.client.authorityId);
     validateActivityId(opts.activityId);
     validateAgent(opts.agent);
     validateRegistration(opts.registration);

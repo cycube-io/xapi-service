@@ -9,7 +9,7 @@ import validateRegistration from './utils/validateRegistration';
 export default (config: Config) => {
   return async (opts: DeleteStateOptions): Promise<void> => {
     const client = opts.client;
-    checkStateWriteScopes(client.scopes);
+    checkStateWriteScopes(client.scopes, opts.agent, client.authorityId);
     validateActivityId(opts.activityId);
     validateAgent(opts.agent);
     validateRegistration(opts.registration);

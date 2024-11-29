@@ -74,12 +74,15 @@ export default (config: Config) => {
       throw new ExpiredClientError();
     }
 
+    const authorityId = JSON.parse(clientDoc.authority ?? {})?.name ?? '';
+
     const client: ClientModel = {
       _id: clientDoc._id.toString() as string,
       isTrusted: clientDoc.isTrusted as boolean,
       lrs_id: clientDoc.lrs_id.toString() as string,
       organisation: clientDoc.organisation.toString() as string,
       scopes: clientDoc.scopes as string[],
+      authorityId,
     };
 
     return { client };

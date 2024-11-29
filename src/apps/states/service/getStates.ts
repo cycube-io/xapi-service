@@ -18,7 +18,7 @@ const getSince = (since?: string): Date | undefined => {
 
 export default (config: Config) => {
   return async (opts: GetStatesOptions): Promise<GetStatesResult> => {
-    checkStateReadScopes(opts.client.scopes);
+    checkStateReadScopes(opts.client.scopes, opts.agent, opts.client.authorityId);
     validateActivityId(opts.activityId);
     validateAgent(opts.agent);
     validateRegistration(opts.registration);

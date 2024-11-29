@@ -7,6 +7,7 @@ export const XAPI_STATEMENTS_READ = 'statements/read';
 export const XAPI_STATEMENTS_WRITE = 'statements/write';
 export const XAPI_STATEMENTS_READ_MINE = 'statements/read/mine';
 export const XAPI_STATE_ALL = 'state';
+export const XAPI_STATE_MINE = 'state/mine';
 export const XAPI_PROFILE_ALL = 'profile';
 
 export const STATEMENT_READ_SCOPES = [
@@ -31,5 +32,6 @@ export default [
   XAPI_STATEMENTS_READ_MINE,
   XAPI_STATEMENTS_WRITE,
   XAPI_STATE_ALL,
+  XAPI_STATE_MINE,
   XAPI_PROFILE_ALL,
 ];

@@ -4,4 +4,5 @@ export default interface Model {
   readonly lrs_id: string;
   readonly isTrusted: boolean;
   readonly scopes: string[];
+  readonly authorityId?: string;
 }

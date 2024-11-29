@@ -10,7 +10,7 @@ import validateRegistration from './utils/validateRegistration';
 
 export default (config: Config) => {
   return async (opts: GetStateOptions): Promise<GetStateResult> => {
-    checkStateReadScopes(opts.client.scopes);
+    checkStateReadScopes(opts.client.scopes, opts.agent, opts.client.authorityId);
     validateActivityId(opts.activityId);
     validateAgent(opts.agent);
     validateRegistration(opts.registration);
